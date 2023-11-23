@@ -1,6 +1,8 @@
 "use client"
 import Link from "next/link";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
+import Image from "next/image";
 
 const Navbar = () => {
     // const { user, userLogOut } = useAuth();
@@ -21,98 +23,105 @@ const Navbar = () => {
         <div>
 
             {/* lg device start */}
-            <div className="w-full fixed z-30 top-0 bg-white bg-opacity-95">
-                <div className="container mx-auto hidden lg:block ">
+            <div className="w-full fixed z-30 top-0 bg-opacity-95">
+                <div className="">
+                    <div className="container mx-auto hidden lg:block">
 
-                    {/* lg navbar section start */}
-                    <div
-                        className="grid grid-cols-12 py-1">
-
-                        <div className="col-span-2 flex items-center  justify-center">
-                            <Link
-                                href={"/"}
-                                className="w-[150px] py-2 px-4 rounded-lg">
-                                {/* <img
-                                    src={logo}
-                                    alt="" /> */}
-                            </Link>
-                        </div>
-
+                        {/* lg navbar section start */}
                         <div
-                            className="col-span-10 flex items-center justify-end text-gray-500 font-black">
+                            className="grid grid-cols-12 py-1">
 
-                            <p
-                                className="mx-5 flex items-center">
-                                Solutions
-                                {/* <IoIosArrowDown className="ms-2 text-yellow-500 font-extrabold" /> */}
-                            </p>
-                            <p
-                                className="mx-5 flex items-center">
-                                Features
-                                {/* <IoIosArrowDown className="ms-2 text-yellow-500 font-extrabold" /> */}
-                            </p>
-                            <p
-                                className="mx-5 flex items-center">
-                                Blogs
-                                {/* <IoIosArrowDown className="ms-2 text-yellow-500 font-extrabold" /> */}
-                            </p>
-                            <p
-                                className="mx-5 flex items-center">
-                                About
-                                {/* <IoIosArrowDown className="ms-2 text-yellow-500 font-extrabold" /> */}
-                            </p>
+                            <div className="col-span-2 flex items-center  justify-center">
+                                {/* logo start */}
+                                <Link
+                                    href={"/"}
+                                    className="w-[150px] py-2 px-4 rounded-lg">
+                                    <Image
+                                        width={"auto"}
+                                        height={"auto"}
+                                        src={logo}
+                                        alt="logo"
+                                        priority={true} />
+                                </Link>
+                                {/* logo end */}
+                            </div>
 
-                            {/* conditional rendering for user and login start */}
-                            {/* {
+                            <div
+                                className="col-span-10 flex items-center justify-end text-gray-500 font-black">
+
+                                <p
+                                    className="mx-5 flex items-center">
+                                    Solutions
+                                    {/* <IoIosArrowDown className="ms-2 text-yellow-500 font-extrabold" /> */}
+                                </p>
+                                <p
+                                    className="mx-5 flex items-center">
+                                    Features
+                                    {/* <IoIosArrowDown className="ms-2 text-yellow-500 font-extrabold" /> */}
+                                </p>
+                                <p
+                                    className="mx-5 flex items-center">
+                                    Blogs
+                                    {/* <IoIosArrowDown className="ms-2 text-yellow-500 font-extrabold" /> */}
+                                </p>
+                                <p
+                                    className="mx-5 flex items-center">
+                                    About
+                                    {/* <IoIosArrowDown className="ms-2 text-yellow-500 font-extrabold" /> */}
+                                </p>
+
+                                {/* conditional rendering for user and login start */}
+                                {/* {
                                 user ? */}
-                            <>
-                                {/* dropdown start */}
-                                <div
-                                    className="dropdown dropdown-end dropdown-hover mx-2">
-                                    {/* <img
+                                <>
+                                    {/* dropdown start */}
+                                    <div
+                                        className="dropdown dropdown-end dropdown-hover mx-2">
+                                        {/* <img
                                                 className="w-12 h-12 rounded-full"
                                                 src=
                                                 {
                                                     user?.photoURL || defaultImg
                                                 }
                                                 alt="" /> */}
-                                    <ul
-                                        tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow rounded-box w-52 flex items-center justify-center font-black bg-slate-50">
+                                        <ul
+                                            tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow rounded-box w-52 flex items-center justify-center font-black bg-slate-50">
 
-                                        <li className="bg-yellow-400 px-3 py-1 text-white rounded-lg mb-1">
-                                            Welcome
-                                            {/* {user?.displayName} */}
-                                        </li>
+                                            <li className="bg-yellow-400 px-3 py-1 text-white rounded-lg mb-1">
+                                                Welcome
+                                                {/* {user?.displayName} */}
+                                            </li>
 
-                                        <li>
-                                            <p
-                                                onClick={handleLogOut}
-                                                className="flex items-center text-base">
-                                                Log Out
-                                                {/* <FiLogOut
+                                            <li>
+                                                <p
+                                                    onClick={handleLogOut}
+                                                    className="flex items-center text-base">
+                                                    Log Out
+                                                    {/* <FiLogOut
                                                             className="text-xl">
                                                         </FiLogOut> */}
-                                            </p>
-                                        </li>
+                                                </p>
+                                            </li>
 
-                                    </ul>
-                                </div>
-                                {/* dropdown end */}
+                                        </ul>
+                                    </div>
+                                    {/* dropdown end */}
 
-                            </>
-                            {/* : */}
-                            <Link
-                                href="/login"
-                                className="text-yellow-400 font-bold rounded-lg border-2 border-yellow-400 px-5 py-2 mr-4 hover:text-white hover:bg-yellow-400 cursor-pointer duration-500">
-                                Log In
-                            </Link>
-                            {/* } */}
+                                </>
+                                {/* : */}
+                                <Link
+                                    href="/login"
+                                    className="text-yellow-400 font-bold rounded-lg border-2 border-yellow-400 px-5 py-2 mr-4 hover:text-white hover:bg-yellow-400 cursor-pointer duration-500">
+                                    Log In
+                                </Link>
+                                {/* } */}
+                            </div>
+                            {/* conditional rendering for user and login end */}
+
                         </div>
-                        {/* conditional rendering for user and login end */}
-
                     </div>
-                </div>
-            </div >
+                </div >
+            </div>
             {/* lg navbar section end */}
 
             {/* sm device start */}
