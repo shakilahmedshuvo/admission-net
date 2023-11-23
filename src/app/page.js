@@ -1,12 +1,9 @@
-import Footer from "@/Components/HomePage/Footer/Footer";
-import Navbar from "@/Components/HomePage/Navbar/Navbar";
+import Banner from "@/Components/HomePage/Banner/Banner";
 
 export default function Home() {
-
   return (
-    <main>
-      <Navbar />
-      <Footer />
+    <main className="mt-20">
+      <Banner />
     </main>
   )
 }

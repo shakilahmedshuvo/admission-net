@@ -149,7 +149,8 @@ const Navbar = () => {
                                             }
                                             alt="" /> */}
                                 <ul
-                                    tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow rounded-box w-52 flex items-center justify-center font-black bg-slate-50">
+                                    tabIndex={0}
+                                    className="dropdown-content z-[1] menu p-2 shadow rounded-box w-52 flex items-center justify-center font-black bg-slate-50">
 
                                     <li className="bg-yellow-400 px-3 py-1 text-white rounded-lg mb-1">
                                         Welcome
